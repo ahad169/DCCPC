@@ -2,16 +2,13 @@
 using namespace std;
 
 void solve() {
-	int n = 5;
-	for(int i = 0; i < n; i++) {
-		for(int j = 0; j < n; j++) {
-			int x; cin >> x;
-			if(x == 1) {
-				cout << abs(i-2) + abs(j-2) << "\n";
-				return;
-			}
-		}
+	int n, k; cin >> n >> k;
+	int ans = 0;
+	for(int i = ceil(k/(n*1.0L)); i <= min(n,k); i++) {
+		ans += !(k % i);
 	}
+	
+	cout << ans << "\n";
 }
 
 int main() {
